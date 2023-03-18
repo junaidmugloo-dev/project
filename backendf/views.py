@@ -239,3 +239,23 @@ class updateservice(viewsets.ViewSet):
             })
             return Response({'status':'success'})
         return Response({},status=status.HTTP_204_NO_CONTENT)
+    
+
+
+
+class delcateview(viewsets.ViewSet):
+    @action(methods=['post'],detail=False)
+    def delcategory(self,request):
+        serializer = delcat(data=request.data)
+        if serializer.is_valid():
+            service = serializer.validated_data['service']
+
+            client = pymongo.MongoClient(railway)
+            db = client['project']
+            collection = db['category']
+
+            collection.delete_one({
+                'service':service
+            })
+            return Response({'status':'success'})
+        return Response({},status=status.HTTP_204_NO_CONTENT)
