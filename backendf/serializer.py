@@ -44,3 +44,9 @@ class deleteslot(serializers.Serializer):
 
 class delcat(serializers.Serializer):
     service = serializers.CharField()
+
+
+class updaterep(serializers.Serializer):
+    name = serializers.CharField()
+    slot = serializers.CharField()
+    doc = serializers.CharField()

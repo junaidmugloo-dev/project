@@ -15,5 +15,6 @@ urlpatterns = [
     path('adddoc/',addDoctorviewset.as_view({'post':'adddoc'})),
     path('deldoc/',removeDoctorviewset.as_view({'post':'deldoc'})),
     path('delmeet/',deletes.as_view({'post':'delslot'})),
-    path('delcate/',delcateview.as_view({'post':'delcategory'}))
+    path('delcate/',delcateview.as_view({'post':'delcategory'})),
+    path('updoc/',updaterepviewset.as_view({'post':'updaterepo'}))
 ]

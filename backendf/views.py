@@ -226,6 +226,30 @@ class updatepass(viewsets.ViewSet):
         return Response({},status=status.HTTP_204_NO_CONTENT)
 
 
+class updaterepviewset(viewsets.ViewSet):
+    @action(methods=['post'],detail=False)
+    def updaterepo(self,request):
+        serializer = updaterep(data=request.data)
+        if serializer.is_valid():
+            name = serializer.validated_data['name'] 
+            slot = serializer.validated_data['slot']
+            doc = serializer.validated_data['doc']
+
+            client = pymongo.MongoClient(railway)
+            db = client['project']
+            details = db['meetings']
+            details.update_one({
+                'name':name,
+                'slot':slot
+            },{
+                '$set':{
+                'doc':doc
+                }
+            })
+            return Response({'status':'success'})
+        return Response({},status=status.HTTP_204_NO_CONTENT)
+
+            
 
 class updateservice(viewsets.ViewSet):
     @action(methods=['post'],detail=False)
