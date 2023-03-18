@@ -134,7 +134,7 @@ class deletes(viewsets.ViewSet):
         serializer = deleteslot(data=request.data)
         if serializer.is_valid():
             name = serializer.validated_data['name']
-            category = serializer.validated_data['sent']
+            category = serializer.validated_data['category']
 
             client = pymongo.MongoClient(railway)
             db = client['project']
