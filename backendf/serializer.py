@@ -12,6 +12,7 @@ class meetingsSerial(serializers.Serializer):
     patient=serializers.CharField()
     sent=serializers.CharField()
     category=serializers.CharField()
+    slot=serializers.CharField()
 
 class passwordSerial(serializers.Serializer):
     Email = serializers.CharField()
