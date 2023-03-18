@@ -8,7 +8,7 @@ from rest_framework.response import Response
 from rest_framework import viewsets,status
 from .serializer import *
 
-railway ="mongodb://192.168.29.240:27017/?directConnection=true&appName=mongosh+1.8.0"
+railway ="mongodb://mongo:NKwMj4MdAXfZMsmXsJWe@containers-us-west-169.railway.app:8009"
 
 def getadmin(request):
     client = pymongo.MongoClient(railway)
