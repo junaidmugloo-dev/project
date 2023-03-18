@@ -128,6 +128,25 @@ class addDoctorviewset(viewsets.ViewSet):
         return Response({},status=status.HTTP_204_NO_CONTENT)
 
 
+class deletes(viewsets.ViewSet):
+    @action(methods=['post'],detail=False)
+    def delslot(self,request):
+        serializer = deleteslot(data=request.data)
+        if serializer.is_valid():
+            name = serializer.validated_data['name']
+            sent = serializer.validated_data['sent']
+
+            client = pymongo.MongoClient(railway)
+            db = client['project']
+            collection = db['meetings']
+
+            collection.delete_one({
+                'name':name,
+                'sent':sent
+            })
+            return Response({'status':'success'})
+        return Response({},status=status.HTTP_204_NO_CONTENT)
+
 
 
 class removeDoctorviewset(viewsets.ViewSet):
@@ -143,7 +162,7 @@ class removeDoctorviewset(viewsets.ViewSet):
             db = client['project']
             collection = db['doctor']
 
-            result = collection.delete_one({
+            collection.delete_one({
                 'name':name,
                 'category':category,
                

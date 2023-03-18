@@ -35,3 +35,7 @@ class deletedoctorserial(serializers.Serializer):
     name = serializers.CharField()
     category = serializers.CharField()
     
+
+class deleteslot(serializers.Serializer):
+    name = serializers.CharField()
+    sent = serializers.CharField()
