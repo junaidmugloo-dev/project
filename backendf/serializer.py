@@ -13,6 +13,7 @@ class meetingsSerial(serializers.Serializer):
     sent=serializers.CharField()
     category=serializers.CharField()
     slot=serializers.CharField()
+    report = serializers.CharField()
 
 class passwordSerial(serializers.Serializer):
     Email = serializers.CharField()
