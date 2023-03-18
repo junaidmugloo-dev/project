@@ -134,7 +134,7 @@ class deletes(viewsets.ViewSet):
         serializer = deleteslot(data=request.data)
         if serializer.is_valid():
             name = serializer.validated_data['name']
-            sent = serializer.validated_data['sent']
+            category = serializer.validated_data['sent']
 
             client = pymongo.MongoClient(railway)
             db = client['project']
@@ -142,7 +142,7 @@ class deletes(viewsets.ViewSet):
 
             collection.delete_one({
                 'name':name,
-                'sent':sent
+                'category':category
             })
             return Response({'status':'success'})
         return Response({},status=status.HTTP_204_NO_CONTENT)
