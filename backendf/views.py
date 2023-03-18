@@ -32,7 +32,8 @@ def getappo(request):
         'name':1,
         'patient':1,
         'sent':1,
-        'category':1
+        'category':1,
+        'slot':1
     }))
     return JsonResponse(details,safe=False)
 
