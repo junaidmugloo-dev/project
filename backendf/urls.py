@@ -13,5 +13,6 @@ urlpatterns = [
     path('update/',updatepass.as_view({'post':'update'})),
     path('addservice/',updateservice.as_view({'post':'addservice'})),
     path('adddoc/',addDoctorviewset.as_view({'post':'adddoc'})),
-    path('deldoc/',removeDoctorviewset.as_view({'post':'deldoc'}))
+    path('deldoc/',removeDoctorviewset.as_view({'post':'deldoc'})),
+    path('delmeet/',deletes.as_view({'post':'delslot'}))
 ]
