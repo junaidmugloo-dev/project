@@ -9,7 +9,7 @@ urlpatterns = [
     path('docx',views.getdocx),
     path('appoint',views.getappo),
     path('register/',registerviewset.as_view({'post':'setlog'})),
-    path('meeting/',meetingviewset.as_view({'post':'meeting'})),
+    path('book/',meetingviewset.as_view({'post':'book'})),
     path('update/',updatepass.as_view({'post':'update'})),
     path('addservice/',updateservice.as_view({'post':'addservice'})),
     path('adddoc/',addDoctorviewset.as_view({'post':'adddoc'})),

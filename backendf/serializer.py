@@ -7,7 +7,7 @@ class RegisterSerial(serializers.Serializer):
     password = serializers.CharField()
 
 
-class meetingsSerial(serializers.Serializer):
+class bookserial(serializers.Serializer):
     name = serializers.CharField() 
     patient=serializers.CharField()
     sent=serializers.CharField()

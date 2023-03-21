@@ -174,8 +174,8 @@ class removeDoctorviewset(viewsets.ViewSet):
 
 class meetingviewset(viewsets.ViewSet):
     @action(methods =['post'],detail=False)
-    def meeting(self,request):
-        serializer = meetingsSerial(data=request.data)
+    def book(self,request):
+        serializer = bookserial(data=request.data)
         if serializer.is_valid():
             name = serializer.validated_data['name']
             patient = serializer.validated_data['patient']
