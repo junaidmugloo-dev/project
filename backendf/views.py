@@ -180,10 +180,10 @@ class meetingviewset(viewsets.ViewSet):
             name = serializer.validated_data['name']
             patient = serializer.validated_data['patient']
             sent = serializer.validated_data['sent']
-            category = serializer.validated_data['category']
-            slot = serializer.validated_data['slot']
-            report = serializer.validated_data['report']
-            doc =serializer.validated_data['doc']
+           # category = serializer.validated_data['category']
+           # slot = serializer.validated_data['slot']
+           # report = serializer.validated_data['report']
+           # doc =serializer.validated_data['doc']
             
             client = pymongo.MongoClient(railway)
             db = client['project']
@@ -193,10 +193,10 @@ class meetingviewset(viewsets.ViewSet):
                 'name':name,
                 'patient':patient,
                 'sent':sent,
-                'category':category,
-                'slot':slot,
-                'report':report,
-                'doc':doc
+                #'category':category,
+                #'slot':slot,
+                #'report':report,
+                #'doc':doc
             })
             return Response({'status':'success'})
         return Response({},status=status.HTTP_204_NO_CONTENT)
