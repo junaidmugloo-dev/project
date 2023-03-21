@@ -11,7 +11,7 @@ class bookserial(serializers.Serializer):
     name = serializers.CharField() 
     patient=serializers.CharField()
     sent=serializers.CharField()
-   # category=serializers.CharField()
+    category=serializers.CharField()
    # slot=serializers.CharField()
    # report = serializers.CharField()
    # doc = serializers.CharField()
