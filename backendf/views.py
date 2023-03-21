@@ -182,7 +182,7 @@ class meetingviewset(viewsets.ViewSet):
             sent = serializer.validated_data['sent']
             category = serializer.validated_data['category']
             slot = serializer.validated_data['slot']
-           # report = serializer.validated_data['report']
+            report = serializer.validated_data['report']
            # doc =serializer.validated_data['doc']
             
             client = pymongo.MongoClient(railway)
@@ -195,7 +195,7 @@ class meetingviewset(viewsets.ViewSet):
                 'sent':sent,
                 'category':category,
                 'slot':slot,
-                #'report':report,
+                'report':report,
                 #'doc':doc
             })
             return Response({'status':'success'})

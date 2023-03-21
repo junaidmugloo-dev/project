@@ -13,7 +13,7 @@ class bookserial(serializers.Serializer):
     sent=serializers.CharField()
     category=serializers.CharField()
     slot=serializers.CharField()
-   # report = serializers.CharField()
+    report = serializers.CharField()
    # doc = serializers.CharField()
 
 class passwordSerial(serializers.Serializer):
