@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-      "build": "echo \"No build specified\" && exit 1",
-      "test": "echo \"No test specified\" && exit 1",
-      "start": "node index.js"
+      "build": "python manage.py runserver",
+      "test": "python manage.py runserver",
+      "start": "python manage.py runserver"
    },
    "repository": {
        "type": "git",
