@@ -199,7 +199,7 @@ class meetingviewset(viewsets.ViewSet):
                 'doc':doc
             })
             return Response({'status':'success'})
-        return Response({},status=status.HTTP_202_ACCEPTED)
+        return Response({},status=status.HTTP_204_NO_CONTENT)
 
 
 
