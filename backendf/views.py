@@ -181,7 +181,7 @@ class meetingviewset(viewsets.ViewSet):
             patient = serializer.validated_data['patient']
             sent = serializer.validated_data['sent']
             category = serializer.validated_data['category']
-           # slot = serializer.validated_data['slot']
+            slot = serializer.validated_data['slot']
            # report = serializer.validated_data['report']
            # doc =serializer.validated_data['doc']
             
@@ -194,7 +194,7 @@ class meetingviewset(viewsets.ViewSet):
                 'patient':patient,
                 'sent':sent,
                 'category':category,
-                #'slot':slot,
+                'slot':slot,
                 #'report':report,
                 #'doc':doc
             })
