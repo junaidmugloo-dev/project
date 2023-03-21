@@ -183,7 +183,7 @@ class meetingviewset(viewsets.ViewSet):
             category = serializer.validated_data['category']
             slot = serializer.validated_data['slot']
             report = serializer.validated_data['report']
-           # doc =serializer.validated_data['doc']
+            doc =serializer.validated_data['doc']
             
             client = pymongo.MongoClient(railway)
             db = client['project']
@@ -196,7 +196,7 @@ class meetingviewset(viewsets.ViewSet):
                 'category':category,
                 'slot':slot,
                 'report':report,
-                #'doc':doc
+                'doc':doc
             })
             return Response({'status':'success'})
         return Response({},status=status.HTTP_204_NO_CONTENT)
