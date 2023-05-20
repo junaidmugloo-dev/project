@@ -9,7 +9,7 @@ from rest_framework import viewsets,status
 from .serializer import *
 
 
-railway = "mongodb://mongo:MURhwCcWYj7FlgUN6ude@containers-us-west-49.railway.app:7658"
+railway ="mongodb://mongo:MURhwCcWYj7FlgUN6ude@containers-us-west-49.railway.app:7658"
 
 
 def getadmin(request):
